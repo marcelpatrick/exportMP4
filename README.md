@@ -28,6 +28,14 @@ You gotta pass the file location in your local machine as input argument
 
 Sequencer > Movie Render Queue > Settings > + Setting > Exports > Add .wav > exclude all the others > Accept > select your shots > Render local
 
+It will not export subtitles 
+
 ## 2- Extract video
 
 Edit > project settings > Movie Pipeline CLI Encoder > Command Line Format > Pass your audio and all jpeg frames as input
+
+```
+-y -f image2 -framerate 30 -i "C:\Users\conta\OneDrive\Documents\UnrealProjects\CitySample_5_0\Saved\MovieRenders\SequenceMaster.%04d.jpeg" -i "C:\Users\conta\OneDrive\Documents\UnrealProjects\CitySample_5_0\Saved\MovieRenders\myAudio.wav" -c:v libx264 -crf 20 -pix_fmt yuv420p -c:a aac -b:a 192k "C:\Users\conta\OneDrive\Documents\UnrealProjects\CitySample_5_0\Saved\MovieRenders\myMovie.mp4"
+```
+
+(%04d means that it will search for all files starting with this name and ending with any 4 digit number. your jpeg files need to follow this name standard)
